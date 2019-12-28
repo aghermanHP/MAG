@@ -20,7 +20,7 @@ npm run build
 npm run test:unit
 ```
 
-### Lints and fixes files
+### Lints and fixes files 
 ```
 npm run lint
 ```
