@@ -1,12 +1,21 @@
 <template>
   <div id="app">
+     <HeaderMag></HeaderMag>
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
     </div>
     <router-view/>
   </div>
 </template>
+
+<script>
+import HeaderMag from './components/header'
+
+export default {
+   components: {
+    HeaderMag
+  }
+}
+</script>
 
 <style lang="scss">
 #app {
