@@ -1,3 +1,4 @@
+
 <template>
 <div>
   <b-navbar toggleable="lg" type="dark" variant="info">
@@ -37,7 +38,7 @@
     </b-collapse>
   </b-navbar>
 
-   <b-modal id="modal-login" title="Login to MGA">
+   <b-modal id="modal-login" title="Login to MGA" @submit="onSubmit">
     <b-form @submit="onSubmit" @reset="onReset">
       <b-form-group
         id="input-group-1"

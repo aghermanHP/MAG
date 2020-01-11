@@ -1,84 +1,74 @@
 <template>
   <div>
-    <b-form @submit="onSubmit" @reset="onReset" v-if="show">
-      <b-form-group
-        id="input-group-1"
-        label="Email address:"
-        label-for="input-1"
-        description="We'll never share your email with anyone else."
+    <div class="page-header clear-filter" filter-color="orange">
+      <parallax
+        class="page-header-image"
+        style="background-image:url('../img/massage1.jpg')"
       >
-        <b-form-input
-          id="input-1"
-          v-model="form.email"
-          type="email"
-          required
-          placeholder="Enter email"
-        ></b-form-input>
-      </b-form-group>
-
-      <b-form-group id="input-group-2" label="Your Name:" label-for="input-2">
-        <b-form-input
-          id="input-2"
-          v-model="form.name"
-          required
-          placeholder="Enter name"
-        ></b-form-input>
-      </b-form-group>
-
-      <b-form-group id="input-group-3" label="Food:" label-for="input-3">
-        <b-form-select
-          id="input-3"
-          v-model="form.food"
-          :options="foods"
-          required
-        ></b-form-select>
-      </b-form-group>
-
-      <b-form-group id="input-group-4">
-        <b-form-checkbox-group v-model="form.checked" id="checkboxes-4">
-          <b-form-checkbox value="me">Check me out</b-form-checkbox>
-          <b-form-checkbox value="that">Check that out</b-form-checkbox>
-        </b-form-checkbox-group>
-      </b-form-group>
-
-      <b-button type="submit" variant="primary">Submit</b-button>
-      <b-button type="reset" variant="danger">Reset</b-button>
-    </b-form>
+      </parallax>
+      <div class="container">
+        <div class="content-center brand">
+          <img class="n-logo" src="img/now-logo.png" alt="" />
+          <h1 class="h1-seo">Now UI Kit.</h1>
+          <h3>A beautiful Bootstrap 4 UI kit. Yours free.</h3>
+        </div>
+        <h6 class="category category-absolute">
+          Designed by
+          <a href="http://invisionapp.com/" target="_blank">
+            <img src="img/invision-white-slim.png" class="invision-logo" /> </a
+          >. Coded by
+          <a href="https://www.creative-tim.com" target="_blank">
+            <img
+              src="img/creative-tim-white-slim2.png"
+              class="creative-tim-logo"
+            /> </a
+          >.
+        </h6>
+      </div>
+    </div>
+    <div class="main">
+      <div class="section section-images">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="hero-images-container">
+                <img src="../img/MGA.png" alt="" />
+              </div>
+              <div class="hero-images-container-1">
+                <img src="img/hero-image-2.png" alt="" />
+              </div>
+              <div class="hero-images-container-2">
+                <img src="img/hero-image-3.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="container text-center">
+        <div class="row justify-content-md-center">
+          <div class="col-md-12 col-lg-8">
+            <h2 class="title">Completed with examples</h2>
+            <h5 class="description">
+              The kit comes with three pre-built pages to help you get started
+              faster. You can change the text and images and you're good to go.
+              More importantly, looking at them will give you a picture of what
+              you can built with this powerful Bootstrap 4 ui kit.
+            </h5>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-        form: {
-          email: '',
-          name: '',
-          food: null,
-          checked: []
-        },
-        foods: [{ text: 'Select One', value: null }, 'Carrots', 'Beans', 'Tomatoes', 'Corn'],
-        show: true
-      }
-    },
-    methods: {
-      onSubmit(evt) {
-        evt.preventDefault()
-        alert(JSON.stringify(this.form))
-      },
-      onReset(evt) {
-        evt.preventDefault()
-        // Reset our form values
-        this.form.email = ''
-        this.form.name = ''
-        this.form.food = null
-        this.form.checked = []
-        // Trick to reset/clear native browser form validation state
-        this.show = false
-        this.$nextTick(() => {
-          this.show = true
-        })
-      }
-    }
+import Parallax from "vue-parallaxy";
+
+export default {
+  components: {
+    Parallax
   }
+};
 </script>

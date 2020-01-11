@@ -6,7 +6,7 @@ import BootstrapVue from 'bootstrap-vue'
 import "./styles/custom.scss"
 import { LayoutPlugin } from 'bootstrap-vue'
 import * as firebase from 'firebase'
-import { config } from './script/configFierbase'
+import { config } from './scriptFirebase/configFierbase'
 
 firebase.initializeApp(config);
 firebase.analytics();
