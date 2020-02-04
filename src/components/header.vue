@@ -1,7 +1,7 @@
 
 <template>
 <div>
-  <b-navbar toggleable="lg" type="dark" variant="info">
+  <b-navbar toggleable="lg" type="dark" variant="headerBlue">
     <b-navbar-brand href="#">MGA</b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -19,7 +19,7 @@
           <b-button size="sm" class="my-2 my-sm-0" type="submit">Search</b-button>
         </b-nav-form>
 
-        <b-nav-item-dropdown text="Lang" right>
+        <b-nav-item-dropdown text="Pages" right>
           <b-dropdown-item to="/">Home</b-dropdown-item>
           <b-dropdown-item to="/about">About</b-dropdown-item>
           <b-dropdown-item v-b-modal.modal-login>login</b-dropdown-item>
@@ -91,19 +91,31 @@ export default {
       .auth()
       .signInWithEmailAndPassword(this.form.email, this.form.password)
       .then(
-        this.$router.replace({ name: "home" }), log("loged in with succes")
+        this.$router.replace({ name: "home" }), log("loged in with succes"),
+        this.$router.params.email = this.form.email   
         )
       .catch(err => {
         this.error = err.message, log('all messages of error are:', err.message)
       });
       },
+
       onReset(evt) {
         evt.preventDefault()
         // Reset our form values
         this.form.email = ''
         this.form.name = ''
+      },
+
+      logout(){
+        firebase.auth().signOut().then(function() {
+        // Sign-out successful.
+         }).catch(function(error) {
+           this.form.error = error.message
+        });
       }
     }
-
 }
 </script>
+<style scoped>
+/* please add variable headerBlue in /node_module/bootstrap/_variables.scss*/
+</style>

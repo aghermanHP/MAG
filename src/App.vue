@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-     <HeaderMag></HeaderMag>
+     <HeaderMag id="header"></HeaderMag>
     <div id="nav">
+       <router-view/>
     </div>
-    <router-view/>
   </div>
 </template>
 
@@ -18,6 +18,12 @@ export default {
 </script>
 
 <style lang="scss">
+#header{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -27,8 +33,7 @@ export default {
 }
 
 #nav {
-  padding: 30px;
-
+  margin-top: 56px;
   a {
     font-weight: bold;
     color: #2c3e50;
