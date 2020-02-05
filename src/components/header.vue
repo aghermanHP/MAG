@@ -9,7 +9,6 @@
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav>
         <b-nav-item href="https://www.facebook.com/adrian.gherman1997">Facebook</b-nav-item>
-        <b-nav-item href="#" disabled>Disabled</b-nav-item>
       </b-navbar-nav>
 
       <!-- Right aligned nav items -->
@@ -19,11 +18,10 @@
           <b-button size="sm" class="my-2 my-sm-0" type="submit">Search</b-button>
         </b-nav-form>
 
-        <b-nav-item-dropdown text="Pages" right>
-          <b-dropdown-item to="/">Home</b-dropdown-item>
-          <b-dropdown-item to="/about">About</b-dropdown-item>
-          <b-dropdown-item v-b-modal.modal-login>login</b-dropdown-item>
-          <b-dropdown-item href="#">FA</b-dropdown-item>
+        <b-nav-item-dropdown text="Pages" right style="z-index=1">
+          <b-dropdown-item to='/'>Home</b-dropdown-item>
+          <b-dropdown-item to='/about'>About</b-dropdown-item>
+          <b-dropdown-item>FA</b-dropdown-item>
         </b-nav-item-dropdown>
 
         <b-nav-item-dropdown right>
@@ -31,8 +29,9 @@
           <template v-slot:button-content>
             <em>User</em>
           </template>
-          <b-dropdown-item href="#">Profile</b-dropdown-item>
-          <b-dropdown-item href="#">Sign Out</b-dropdown-item>
+          <b-dropdown-item-btn>Profile</b-dropdown-item-btn>
+          <b-dropdown-item-btn v-b-modal.modal-login>Login</b-dropdown-item-btn>
+          <b-dropdown-item-btn>Sign Out</b-dropdown-item-btn>
         </b-nav-item-dropdown>
       </b-navbar-nav>
     </b-collapse>
@@ -118,4 +117,7 @@ export default {
 </script>
 <style scoped>
 /* please add variable headerBlue in /node_module/bootstrap/_variables.scss*/
+nav_btn {
+  background-color: aqua;
+}
 </style>

@@ -6,7 +6,7 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/:email',
+    path: '/',
     name: 'home',
     component: Home
   },
